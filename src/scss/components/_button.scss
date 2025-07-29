@@ -5,17 +5,15 @@
   line-height: 1;
   font-size: var(--btn-font-size);
   border-radius: var(--btn-border-radius);
-  font-weight: 600;
-  color: white;
+  font-weight: var(--btn-font-weight);
 
-  padding: 18px 32px;
-  margin: 6px 0;
+  padding: 17px 50px;
   text-align: center;
   max-width: 100%;
+  transition: box-shadow 0.3s ease-in-out;
 
   &:hover {
-    opacity: 0.9;
-    transition: opacity 0.3s;
+    box-shadow: 0 4px 30px 0 rgba(32, 32, 32, 0.25);
   }
 
   &[disabled] {
@@ -29,9 +27,6 @@
 }
 
 .button-primary {
-  background-color: var(--primary-color);
-}
-
-.button-secondary {
-  background-color: var(--text-secondary);
+  background-color: var(--btn-primary-bg-color);
+  color: var(--btn-primary-text-color);
 }

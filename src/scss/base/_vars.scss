@@ -1,14 +1,15 @@
 :root {
   --white-color: #ffffff;
+  --black-color: #000000;
 
-  --gray-100: #f1f1f1;
-  --gray-200: #d6d6d6;
-  --gray-400: #55565a;
-  // --gray-500: #38535d;
-  --gray-600: #282829;
-  --gray-800: #222222;
+  --gray-100: #fefdfc;
+  // --gray-200: #d6d6d6;
+  --gray-400: #9a9a9a;
+  --gray-500: #646464;
+  --gray-600: #4e4e4e; // p
+  // --gray-800: #222222;
 
-  --green: #2b8a3e;
+  --green: #00634b;
   // --red: #ff0000;
   // --brown: #8b4513;
   // --yellow: #f0c14b;
@@ -16,20 +17,26 @@
   // --blue: #0a66c2;
 
   --bg-color: var(--gray-100);
-  --text-color: var(--gray-800);
+  --text-color: var(--black-color);
   --border-color: var(--gray-400);
-  --input-border-color: var(--gray-200);
 
   --primary-color: var(--green);
-  --text-secondary: var(--gray-400);
-
-  --header-bg: var(--gray-200);
+  --text-secondary: var(--gray-500);
+  --header-bg: var(--white-color);
 
   --border-radius: 4px;
-  --border-radius-md: 16px;
-  --border-radius-lg: 24px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 20px;
+
+  /* input */
+  --input-border-color: var(--border-color);
+  --input-focus-border-color: var(--primary-color);
+  --input-border-radius: var(--border-radius);
 
   /* buttons */
-  --btn-border-radius: var(--border-radius);
-  --btn-font-size: 16px;
+  --btn-border-radius: var(--border-radius-md);
+  --btn-font-size: 18px;
+  --btn-font-weight: 600;
+  --btn-primary-bg-color: var(--green);
+  --btn-primary-text-color: var(--white-color);
 }

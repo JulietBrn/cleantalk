@@ -1,12 +1,17 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 30px;
 
   &__input {
-    padding: 12px 16px;
-    // font-family: "Inter";
-    border-radius: var(--border-radius);
+    padding: 15px 16px;
+    font-family: "Inter";
+    border-color: var(--input-border-color);
+    border-radius: var(--input-border-radius);
     border-width: 1px;
+
+    &:focus {
+      border-color: var(--input-focus-border-color);
+    }
   }
 }

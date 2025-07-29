@@ -41,89 +41,68 @@
         </div>
       </section>
 
-      <section class="section reviews">
+      <section class="section" id="form">
         <div class="container">
           <div class="title-wrap">
-            <h2></h2>
+            <h2>Registration</h2>
           </div>
-        </div>
-      </section>
+          <form class="form" method="post">
+            <div class="input-wrap">
+              <label for="name">Name Surname</label>
+              <input class="form__input" type="text" name="name" required />
+            </div>
+            <div class="input-wrap">
+              <label for="email">Email</label>
+              <input class="form__input" type="email" name="email" required />
+            </div>
+            <div class="input-wrap">
+              <label for="phone">Phone</label>
+              <input class="form__input" type="text" name="phone" required />
+            </div>
 
-      <!-- <section class="section" id="form">
-        <div class="container">
-          <div class="title-wrap">
-            <h2>
-              Order now
-            </h2>
-          </div>
-          <form class="form" action="thanks_form.php" method="post">
-            <input
-              class="form__input"
-              type="text"
-              name="name"
-              placeholder="Name"
-              required
-            />
-            <input
-              class="form__input"
-              type="email"
-              name="email"
-              placeholder="Email"
-              required
-            />
-            <textarea
-              class="form__input"
-              type="text"
-              name="text"
-              placeholder="Message"
-              minlength="2"
-              maxlength="500"
-              required
-            ></textarea>
+            <div class="input-wrap">
+              <label for="referral">Where did you find us</label>
+              <select name="referral" id="referral">
+                <option value="google">Google</option>
+                <option value="linkedin">Linkedin</option>
+                <option value="facebook">Facebook</option>
+                <option value="instagram">Instagram</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="input-wrap">
+              <label for="password">Password</label>
+              <input
+                class="form__input"
+                type="password"
+                name="password"
+                required
+              />
+            </div>
+
+            <div class="input-wrap">
+              <label for="confirm-password">Confirm password</label>
+              <input
+                class="form__input"
+                type="password"
+                name="confirm-password"
+                required
+              />
+            </div>
 
             <div class="form__checkbox">
               <input type="checkbox" name="privacy" value="on" required />
-              I accept <a href="privacy-policy.html">privacy policy</a>
+              I agree with
+              <a href="privacy-policy.html">Terms and Conditions</a>
             </div>
 
-            <button class="button button-primary">Send</button>
+            <button class="button button-primary">Register</button>
           </form>
         </div>
-      </section> -->
+      </section>
     </main>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__contacts-wrap">
-          <h3>Links</h3>
-          <ul class="footer__contacts"></ul>
-        </div>
-        <div class="footer__contacts-wrap">
-          <h3>Contacts</h3>
-          <div class="footer__contacts">
-            <a class="footer-link" href="mailto:[companyemail]"
-              >[companyemail]</a
-            >
-            <a class="footer-link" href="tel:+91"></a>
-
-            <a
-              class="footer-link"
-              href="http://"
-              target="_blank"
-              rel="noopener noreferrer"
-            ></a>
-          </div>
-        </div>
-
-        <div class="footer__contacts-wrap">
-          <h3>Policy</h3>
-          <div class="footer__contacts">
-            <a class="footer-link" href="privacy-policy.html">Privacy policy</a>
-            <a class="footer-link" href="terms-conditions.html">Terms of Use</a>
-          </div>
-        </div>
-      </div>
-    </footer>
     <script src="script.js"></script>
   </body>
 </html>

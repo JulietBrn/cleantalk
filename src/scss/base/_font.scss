@@ -1,16 +1,8 @@
 @use "../base/_breakpoints";
 
-@font-face {
-  //   font-family: 'Prata';
-  //   src: local('Prata');
-  //   src: url(assets/font/Prata/Prata-Regular.ttf);
-}
-
 h1,
-h2,
-h3 {
+h2 {
   text-wrap: balance;
-  //   font-family: 'Prata', serif;
 }
 
 @font-face {
@@ -31,7 +23,7 @@ h1,
 
   font-size: 38px;
   @media (min-width: breakpoints.$md) {
-    font-size: 42px;
+    font-size: 64px;
   }
 }
 
@@ -42,20 +34,7 @@ h2,
 
   font-size: 26px;
   @media (min-width: breakpoints.$md) {
-    font-size: 32px;
-  }
-}
-
-h3 {
-  margin-bottom: 12px;
-}
-
-.subtitle {
-  line-height: 120%;
-
-  font-size: 20px;
-  @media (min-width: breakpoints.$md) {
-    font-size: 26px;
+    font-size: 24px;
   }
 }
 
