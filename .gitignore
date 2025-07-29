@@ -1,0 +1,9 @@
+
+node_modules/
+# src/
+
+.prettierrc
+
+# *.json
+# webpack.config.js
+# .gitignore

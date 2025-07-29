@@ -1,0 +1,23 @@
+.card {
+  transition: opacity 0.6s ease;
+
+  &:nth-child(n + 5) {
+    visibility: hidden;
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+.show-wrap {
+  &.show {
+    .card {
+      visibility: visible;
+      max-height: 100%;
+      opacity: 1;
+    }
+  }
+}
+
+.hide {
+  display: none;
+}

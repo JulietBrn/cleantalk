@@ -1,0 +1,12 @@
+.section-terms {
+  counter-reset: num;
+  &__title {
+    margin-bottom: 6px;
+    margin-top: 16px;
+
+    &:before {
+      counter-increment: num;
+      content: counter(num) ". ";
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@use "../base/_breakpoints";
+
+@font-face {
+  //   font-family: 'Prata';
+  //   src: local('Prata');
+  //   src: url(assets/font/Prata/Prata-Regular.ttf);
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  //   font-family: 'Prata', serif;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter");
+  src: url(assets/font/Inter/Inter-VariableFont_opsz,wght.ttf);
+  font-display: swap;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+.h1 {
+  line-height: 120%;
+  margin-bottom: 20px;
+
+  font-size: 38px;
+  @media (min-width: breakpoints.$md) {
+    font-size: 42px;
+  }
+}
+
+h2,
+.h2 {
+  line-height: 110%;
+  margin-bottom: 20px;
+
+  font-size: 26px;
+  @media (min-width: breakpoints.$md) {
+    font-size: 32px;
+  }
+}
+
+h3 {
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  line-height: 120%;
+
+  font-size: 20px;
+  @media (min-width: breakpoints.$md) {
+    font-size: 26px;
+  }
+}
+
+p,
+a {
+  font-size: 16px;
+  @media (min-width: breakpoints.$md) {
+    font-size: 18px;
+  }
+}
+
+.fw-600 {
+  font-weight: 600;
+}

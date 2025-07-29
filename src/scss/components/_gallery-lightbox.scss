@@ -1,0 +1,57 @@
+.gallery-img {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    opacity: 0.9;
+    box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lightbox .lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+}
+
+.nav-arr {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 20px;
+  user-select: none;
+  --position: 10px;
+  @media (min-width: 1700px) {
+    --position: calc(20vw);
+  }
+}
+
+.nav-arr.prev {
+  left: var(--position);
+}
+
+.nav-arr.next {
+  right: var(--position);
+}

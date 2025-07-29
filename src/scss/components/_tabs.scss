@@ -1,0 +1,45 @@
+.tabs-wrap {
+  --active-bg-color: white;
+  --tab-text-color: #000;
+}
+
+.tabs {
+  display: flex;
+
+  a {
+    display: block;
+    padding: 10px 20px;
+    &.active {
+      background: var(--active-bg-color);
+      color: #000;
+    }
+  }
+}
+
+.tab {
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
+  text-align: center;
+}
+
+.tab-main-box {
+  margin-top: -2px;
+  padding: 10px 30px;
+  background: var(--active-bg-color);
+  color: var(--tab-text-color);
+}
+
+.tab-box {
+  visibility: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: 0.5s opacity;
+
+  &.visible {
+    max-height: 10000px;
+    visibility: visible;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,24 @@
+.pattern {
+  background-position: right 100px;
+  background-repeat: no-repeat;
+  background-size: 30%;
+}
+
+.pattern-1 {
+  background-image: url(assets/img/pattern-1.svg);
+}
+.pattern-2 {
+  background-image: url(assets/img/pattern-2.svg);
+  background-position: left 100px;
+}
+
+.section {
+  &:nth-child(3n + 3) {
+    @extend .pattern;
+    @extend .pattern-1;
+  }
+  &:nth-child(3n + 2) {
+    @extend .pattern;
+    @extend .pattern-2;
+  }
+}

@@ -1,0 +1,75 @@
+@use "../base/_breakpoints";
+
+.gap-8-to-20 {
+  --gap: 8px;
+  @media (min-width: breakpoints.$md) {
+    --gap: 20px;
+  }
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-gap: var(--gap, 20px);
+}
+
+.grid-2 {
+  @media (min-width: breakpoints.$md) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.grid-2-4 {
+  --gap: 8px;
+  grid-template-columns: 1fr 1fr;
+  @media (min-width: breakpoints.$md) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.grid-3 {
+  @media (min-width: breakpoints.$md) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.grid-4 {
+  @media (min-width: breakpoints.$sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: breakpoints.$md) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.img-3 {
+  @media (min-width: breakpoints.$sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: breakpoints.$md) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// /* grid из 6 колонок асимметричный */
+// .grid-4-2-3-3 {
+//   display: grid;
+//   align-items: center;
+//   grid-gap: 20px;
+//   @media (min-width: breakpoints.$md) {
+//     grid-template-columns: repeat(6, 1fr);
+
+//     .grid-item-4 {
+//       grid-column: span 4;
+//     }
+//     .grid-item-2 {
+//       grid-column: span 2;
+//     }
+//     .grid-item-3 {
+//       grid-column: span 3;
+//     }
+//   }
+// }

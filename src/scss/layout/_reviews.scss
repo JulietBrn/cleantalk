@@ -1,0 +1,14 @@
+// .stars {
+//   margin-bottom: 10px;
+//   .star {
+//     opacity: 0.4;
+//   }
+// }
+
+// @for $n from 1 through 5 {
+//   .stars[data-stars="#{$n}"] {
+//     .star:nth-child(-n + #{$n}) {
+//       opacity: 1;
+//     }
+//   }
+// }

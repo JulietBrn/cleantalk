@@ -1,0 +1,12 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+
+  &__input {
+    padding: 12px 16px;
+    // font-family: "Inter";
+    border-radius: var(--border-radius);
+    border-width: 1px;
+  }
+}

@@ -1,0 +1,29 @@
+@use "base/_vars";
+@use "base/_base";
+@use "base/_font";
+@use "base/_grid";
+@use "base/_img";
+@use "base/_br";
+// @use "base/_pattern-bg";
+
+@use "components/_button";
+@use "components/_header";
+@use "components/_form";
+@use "components/_footer";
+@use "components/_burger";
+// @use "components/_anim";
+// @use "components/_link-anim";
+// @use "components/_tabs";
+// @use "components/_scroll-top";
+// @use "components/_slider";
+// @use "components/_show";
+// @use "components/_gallery-lightbox";
+
+@use "layout/_hero";
+@use "layout/_reviews";
+@use "layout/_about";
+@use "layout/_product";
+// @use "layout/_faq";
+
+@use "layout/_terms";
+@use "layout/_thanks";

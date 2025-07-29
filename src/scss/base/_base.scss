@@ -1,0 +1,128 @@
+@use "../base/_breakpoints";
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+
+  /* header */
+  --header-h: 50px;
+  --header-padding: 10px;
+  @media (min-width: breakpoints.$lg) {
+    --header-h: 70px;
+  }
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+section:first-child {
+  padding-top: calc(var(--header-h) + 50px);
+  @media (min-width: breakpoints.$lg) {
+    padding-top: calc(var(--header-h) + 60px);
+  }
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+.list {
+  margin-bottom: 20px;
+}
+
+.list li {
+  &::before {
+    content: "•";
+    color: var(--primary-color);
+    margin-right: 10px;
+  }
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.container {
+  --container-padding: 20px;
+  max-width: calc(1060px + 3 * var(--container-padding));
+  padding: 0 var(--container-padding);
+  margin: auto;
+}
+
+.section {
+  --pad-top: 60px;
+
+  padding-top: var(--pad-top);
+  padding-bottom: calc(var(--pad-top) * 1.4);
+}
+
+.mw-100 {
+  max-width: 100%;
+}
+
+.mw-50 {
+  max-width: 49%;
+}
+
+.mw-600 {
+  max-width: 600px;
+}
+
+.mw-800 {
+  max-width: 800px;
+}
+
+.m-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+p {
+  margin-bottom: 12px;
+}
+
+.title-wrap {
+  margin-bottom: calc(var(--pad-top) * 0.5);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.link {
+  color: var(--primary-color);
+  text-decoration: underline;
+}

@@ -1,0 +1,63 @@
+@use "../base/_breakpoints";
+
+.burger {
+  --burger-color: var(--primary-color);
+  cursor: pointer;
+  transform: translateY(-2px);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+@media (min-width: 769px) {
+  .burger {
+    display: none;
+  }
+}
+.burger::before,
+.burger::after {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: var(--burger-color);
+  display: block;
+  margin: 5px 0;
+  transition: all 0.2s;
+}
+.burger.burger-rotate .burger-span {
+  opacity: 0;
+}
+.burger.burger-rotate::before {
+  transform: translateY(9px) rotate(45deg);
+}
+.burger.burger-rotate::after {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.burger-span {
+  width: 24px;
+  height: 2px;
+  background: var(--burger-color);
+}
+
+@media (max-width: breakpoints.$md) {
+  .header__nav-menu {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    padding: var(--container-padding);
+    overflow: auto;
+    position: fixed;
+    top: calc(var(--header-h) - 2px);
+    left: 0;
+    width: 100%;
+    height: calc(100dvh - var(--header-h) + 4px);
+    background: var(--header-bg);
+    z-index: 40;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header__nav-menu.nav-hidden {
+    opacity: 1;
+    visibility: visible;
+  }
+}
