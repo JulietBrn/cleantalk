@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (burger) {
     const navLinks = document.querySelectorAll(
-      ".header__nav-menu .nav-menu__item, .logo-img"
+      ".header__nav-menu .nav-menu__link:not(.link-dropdown), .logo-img"
     );
     const nav = document.querySelector(".header__nav-menu");
     const body = document.querySelector("body");
@@ -30,6 +30,34 @@ document.addEventListener("DOMContentLoaded", function () {
       nav.classList.remove("nav-hidden");
       body.classList.remove("hidden");
     }
+  }
+
+  /* dropdown */
+  const dropdownLinks = document.querySelectorAll(".link-dropdown");
+  if (dropdownLinks.length) {
+    const dropdowns = document.querySelectorAll(".dropdown-menu");
+    dropdownLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const dropdown = link.nextElementSibling;
+        if (dropdown) {
+          dropdowns.forEach((d) => d.classList.remove("active"));
+          dropdown.classList.toggle("active");
+        }
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".link-dropdown")) {
+        dropdownLinks.forEach((link) => {
+          const dropdown = link.nextElementSibling;
+          if (dropdown && dropdown.classList.contains("active")) {
+            dropdown.classList.remove("active");
+            link.classList.remove("active");
+          }
+        });
+      }
+    });
   }
 
   /* select */

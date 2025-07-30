@@ -305,21 +305,15 @@ a {
 
 .nav-menu__item {
   position: relative;
-}
-@media (min-width: 1201px) {
-  .nav-menu__item:focus-within .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
+  text-align: center;
 }
 
 .dropdown-menu {
-  border-radius: 8px;
-  padding: 12px 0;
-  transform: translateY(10px);
-  transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+  border-radius: var(--border-radius);
+  transition: opacity 0.2s;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
 }
 .dropdown-menu li a {
   padding: 10px 24px;
@@ -327,14 +321,19 @@ a {
 @media (min-width: 1201px) {
   .dropdown-menu {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 20px);
     left: 0;
     min-width: 180px;
     background: #fff;
-    opacity: 0;
-    visibility: hidden;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   }
+}
+.dropdown-menu.active {
+  padding: 12px 0;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  max-height: unset;
 }
 
 .form {
@@ -497,6 +496,7 @@ a {
 }
 .modal-wrap {
   width: 464px;
+  height: 0;
   max-width: calc(100% - 12px);
   margin: 6px auto;
   position: fixed;
@@ -552,6 +552,10 @@ a {
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.2s ease, visibility 0.3s ease;
+}
+
+.modal-wrap.active {
+  height: auto;
 }
 
 .modal-wrap.active,
