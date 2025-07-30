@@ -4,9 +4,12 @@
   align-items: center;
 }
 
+.justify-items-center {
+  justify-items: center;
+}
+
 .grid {
   display: grid;
-  grid-gap: var(--gap, 20px);
 }
 
 .grid-2 {

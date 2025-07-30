@@ -8,7 +8,7 @@
   flex-direction: column;
   gap: 2px;
 }
-@media (min-width: 769px) {
+@media (min-width: 1201px) {
   .burger {
     display: none;
   }
@@ -39,7 +39,7 @@
   background: var(--burger-color);
 }
 
-@media (max-width: breakpoints.$md) {
+@media (max-width: 1200px) {
   .header__nav-menu {
     opacity: 0;
     visibility: hidden;
@@ -47,10 +47,10 @@
     padding: var(--container-padding);
     overflow: auto;
     position: fixed;
-    top: calc(var(--header-h) - 2px);
+    top: calc(var(--header-h) + var(--header-padding) - 2px);
     left: 0;
     width: 100%;
-    height: calc(100dvh - var(--header-h) + 4px);
+    height: calc(100dvh - var(--header-h) - var(--header-padding) + 10px);
     background: var(--header-bg);
     z-index: 40;
     flex-direction: column;

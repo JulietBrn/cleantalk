@@ -7,20 +7,17 @@
   border-radius: var(--btn-border-radius);
   font-weight: var(--btn-font-weight);
 
-  padding: 17px 50px;
+  padding: 18px 50px;
   text-align: center;
   max-width: 100%;
-  transition: box-shadow 0.3s ease-in-out;
-
-  &:hover {
-    box-shadow: 0 4px 30px 0 rgba(32, 32, 32, 0.25);
-  }
 
   &[disabled] {
     opacity: 0.7;
     cursor: not-allowed;
   }
+}
 
+.section .button {
   @media (max-width: breakpoints.$md) {
     width: 100%;
   }
@@ -29,4 +26,23 @@
 .button-primary {
   background-color: var(--btn-primary-bg-color);
   color: var(--btn-primary-text-color);
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 4px 30px 0 rgba(32, 32, 32, 0.25);
+  }
+}
+
+.button-link {
+  color: var(--primary-color);
+}
+
+.button-sm {
+  padding: 10px 12px;
+  font-size: 14px;
+
+  @media (min-width: breakpoints.$md) {
+    padding: 12px 17px;
+    font-size: 16px;
+  }
 }

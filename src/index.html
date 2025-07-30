@@ -16,16 +16,47 @@
           <a href="index.html" class="logo">
             <img
               class="logo-img img-fill"
-              src="assets/img/logo.png"
+              src="assets/img/logo.svg"
               alt="Logo"
             />
           </a>
 
           <ul class="nav-menu header__nav-menu">
             <li class="nav-menu__item">
-              <a class="nav-menu__link" href="index.html#form">Order</a>
+              <a class="nav-menu__link" href="#">About</a>
+            </li>
+            <li class="nav-menu__item">
+              <a class="nav-menu__link link-dropdown" href="#">Courses</a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-menu__link" href="#">Programming</a></li>
+                <li><a class="nav-menu__link" href="#">Design</a></li>
+                <li><a class="nav-menu__link" href="#">Business</a></li>
+              </ul>
+            </li>
+            <li class="nav-menu__item">
+              <a class="nav-menu__link link-dropdown" href="#">Universities</a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-menu__link" href="#">Programming</a></li>
+                <li><a class="nav-menu__link" href="#">Design</a></li>
+                <li><a class="nav-menu__link" href="#">Business</a></li>
+              </ul>
+            </li>
+            <li class="nav-menu__item">
+              <a class="nav-menu__link" href="#">Online Degrees</a>
+            </li>
+            <li class="nav-menu__item">
+              <a class="nav-menu__link" href="#">Teachers</a>
             </li>
           </ul>
+          <div class="btns-wrap">
+            <button class="button button-link button-sm">Log in</button>
+            <button
+              class="button button-primary button-sm js-open-modal"
+              data-modal="register"
+            >
+              Register
+            </button>
+          </div>
           <div class="burger">
             <span class="burger-span"></span>
           </div>
@@ -35,73 +66,226 @@
     <main>
       <section class="section hero">
         <div class="container">
-          <div class="title-wrap">
-            <h1></h1>
+          <div
+            class="grid grid-2 justify-items-center align-items-center hero__grid"
+          >
+            <div class="title-wrap">
+              <img src="assets/img/cover.svg" alt="Cover" class="img-bg" />
+              <div class="title-wrap__content">
+                <h1>Learn without limits</h1>
+                <p class="text-secondary">
+                  Start, switch, or advance your career with more than 5,800
+                  courses, Professional Certificates, and degrees from
+                  world-class universities and companies. <br />
+                  Learning with us is easy because we have
+                </p>
+                <div class="flex items">
+                  <div class="item">
+                    <svg class="icon item__icon">
+                      <use xlink:href="assets/img/sprite.svg#icon-book"></use>
+                    </svg>
+                    <span>Big library </span>
+                  </div>
+                  <div class="item">
+                    <svg class="icon item__icon">
+                      <use
+                        xlink:href="assets/img/sprite.svg#icon-dollar-sign"
+                      ></use>
+                    </svg>
+                    <span>Low prices</span>
+                  </div>
+                  <div class="item">
+                    <svg class="icon item__icon">
+                      <use
+                        xlink:href="assets/img/sprite.svg#icon-certificate"
+                      ></use>
+                    </svg>
+                    <span>Professional certificates</span>
+                  </div>
+                </div>
+                <button class="button button-primary">Start learning</button>
+              </div>
+            </div>
+            <div class="imgs-wrap">
+              <img
+                class="hero-img"
+                src="assets/img/hero-img.png"
+                alt="Hero Image 1"
+              />
+              <div class="students-card-wrap">
+                <div class="students-card">
+                  <div class="students-card-wrap__top">
+                    <img
+                      class="img-stat"
+                      src="assets/img/stat.svg"
+                      alt="Students Card"
+                    />
+                    <hr />
+                  </div>
+                  <div class="avatars-wrap">
+                    <div class="avatar-img active">
+                      <img
+                        class="img-fill"
+                        src="assets/img/avatar-1.png"
+                        alt="Avatar 1"
+                      />
+                    </div>
+
+                    <div class="avatar-img">
+                      <img
+                        class="img-fill"
+                        src="assets/img/avatar-2.png"
+                        alt="Avatar 2"
+                      />
+                    </div>
+                    <div class="avatar-img">
+                      <img
+                        class="img-fill"
+                        src="assets/img/avatar-3.png"
+                        alt="Avatar 3"
+                      />
+                    </div>
+                    <div class="avatar-img">
+                      <img
+                        class="img-fill"
+                        src="assets/img/avatar-4.png"
+                        alt="Avatar 4"
+                      />
+                    </div>
+                    <div class="avatar-img">
+                      <img
+                        class="img-fill"
+                        src="assets/img/avatar-5.png"
+                        alt="Avatar 5"
+                      />
+                    </div>
+                    <div class="avatar-img">
+                      <img
+                        class="img-fill"
+                        src="assets/img/avatar-6.png"
+                        alt="Avatar 6"
+                      />
+                    </div>
+                    <div class="avatar-img">
+                      <img
+                        class="img-fill"
+                        src="assets/img/avatar-7.png"
+                        alt="Avatar 7"
+                      />
+                    </div>
+                    <div class="avatar-img avatar-img-empty">
+                      <span>+</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="form">
-        <div class="container">
-          <div class="title-wrap">
+      <div class="modal-wrap" id="form" data-modal="register">
+        <div class="modal-wrap__inner">
+          <div class="form-title text-center">
             <h2>Registration</h2>
+            <button class="modal-close">
+              <svg class="icon">
+                <use xlink:href="assets/img/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
           </div>
           <form class="form" method="post">
-            <div class="input-wrap">
-              <label for="name">Name Surname</label>
-              <input class="form__input" type="text" name="name" required />
-            </div>
-            <div class="input-wrap">
-              <label for="email">Email</label>
-              <input class="form__input" type="email" name="email" required />
-            </div>
-            <div class="input-wrap">
-              <label for="phone">Phone</label>
-              <input class="form__input" type="text" name="phone" required />
-            </div>
+            <div class="form-inputs">
+              <div class="input-wrap">
+                <input
+                  class="input-wrap__input"
+                  type="text"
+                  name="name"
+                  required
+                />
+                <label class="input-wrap__label" for="name">Name Surname</label>
+              </div>
+              <div class="input-wrap">
+                <input
+                  class="input-wrap__input"
+                  type="email"
+                  name="email"
+                  required
+                />
+                <label class="input-wrap__label" for="email">Email</label>
+              </div>
+              <div class="input-wrap">
+                <input
+                  class="input-wrap__input"
+                  type="text"
+                  name="phone"
+                  required
+                />
+                <label class="input-wrap__label" for="phone">Phone</label>
+              </div>
 
-            <div class="input-wrap">
-              <label for="referral">Where did you find us</label>
-              <select name="referral" id="referral">
-                <option value="google">Google</option>
-                <option value="linkedin">Linkedin</option>
-                <option value="facebook">Facebook</option>
-                <option value="instagram">Instagram</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
+              <div class="input-wrap input-wrap--select input-wrap_icon">
+                <svg class="icon icon-chevron-down input-wrap__icon">
+                  <use
+                    xlink:href="assets/img/sprite.svg#icon-chevron-down"
+                  ></use>
+                </svg>
+                <label for="referral"></label>
+                <select class="input-wrap__input" name="referral" id="referral">
+                  <option value="null" disabled selected>
+                    Where did you find us
+                  </option>
+                  <option value="google">Google</option>
+                  <option value="linkedin">Linkedin</option>
+                  <option value="facebook">Facebook</option>
+                  <option value="instagram">Instagram</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
 
-            <div class="input-wrap">
-              <label for="password">Password</label>
-              <input
-                class="form__input"
-                type="password"
-                name="password"
-                required
-              />
-            </div>
+              <div class="input-wrap input-wrap_icon">
+                <svg class="icon icon-eye input-wrap__icon">
+                  <use xlink:href="assets/img/sprite.svg#icon-eye"></use>
+                </svg>
+                <input
+                  class="input-wrap__input"
+                  type="password"
+                  name="password"
+                  required
+                />
+                <label class="input-wrap__label" for="password">Password</label>
+              </div>
 
-            <div class="input-wrap">
-              <label for="confirm-password">Confirm password</label>
-              <input
-                class="form__input"
-                type="password"
-                name="confirm-password"
-                required
-              />
+              <div class="input-wrap input-wrap_icon">
+                <svg class="icon icon-eye input-wrap__icon">
+                  <use xlink:href="assets/img/sprite.svg#icon-eye"></use>
+                </svg>
+                <input
+                  class="input-wrap__input"
+                  type="password"
+                  name="confirm-password"
+                  required
+                />
+                <label class="input-wrap__label" for="confirm-password"
+                  >Confirm password</label
+                >
+              </div>
             </div>
 
             <div class="form__checkbox">
               <input type="checkbox" name="privacy" value="on" required />
-              I agree with
-              <a href="privacy-policy.html">Terms and Conditions</a>
+              <span
+                >I agree with
+                <a class="tdu" href="#">Terms and Conditions</a></span
+              >
             </div>
 
-            <button class="button button-primary">Register</button>
+            <button class="form__button button button-primary">Register</button>
           </form>
         </div>
-      </section>
+      </div>
     </main>
+    <div class="backdrop"></div>
 
     <script src="script.js"></script>
   </body>

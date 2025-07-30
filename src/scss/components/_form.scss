@@ -1,17 +1,109 @@
 .form {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  --input-padding-x: 15px;
+  --input-padding-y: 17px;
+  --input-padding-x-end: var(--input-padding-x);
+
+  .form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    margin-bottom: 20px;
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 48px;
+
+    span,
+    a {
+      color: var(--gray-500);
+      font-size: 14px;
+    }
+
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: var(--primary-color);
+      border-radius: 2px;
+      margin-right: 8px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+  }
+}
+
+.input-wrap {
+  position: relative;
+  font-size: var(--input-font-size);
+
+  &_icon {
+    --input-padding-x-end: calc(var(--input-padding-x) + 30px);
+  }
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: var(--input-padding-x);
+    z-index: -1;
+    transition: all 0.2s ease-in-out;
+  }
 
   &__input {
-    padding: 15px 16px;
+    padding: var(--input-padding-x) var(--input-padding-y);
+    padding-right: var(--input-padding-x-end);
+    width: 100%;
     font-family: "Inter";
+    font-size: var(--input-font-size);
     border-color: var(--input-border-color);
     border-radius: var(--input-border-radius);
     border-width: 1px;
+    background: transparent;
+    appearance: none;
+    outline: none;
 
-    &:focus {
+    &:focus,
+    &.filled {
       border-color: var(--input-focus-border-color);
+      border-width: 1.5px;
+
+      & ~ .input-wrap__label {
+        top: 0;
+        z-index: 5;
+        background: var(--bg-color);
+        padding: 0 4px;
+        color: var(--primary-color);
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: var(--input-padding-x);
+    transform: translateY(-50%);
+    z-index: 6;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .icon-chevron-down {
+    filter: brightness(0);
+    z-index: -1;
+  }
+}
+
+.input-wrap--select {
+  &.opened {
+    .input-wrap__icon {
+      transform: rotate(180deg) translateY(50%);
+      filter: brightness(1);
     }
   }
 }

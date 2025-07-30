@@ -1,12 +1,14 @@
-const path = require("path");
-const fs = require("fs");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
-const ZipPlugin = require("zip-webpack-plugin");
+import path from "path";
+import fs from "fs";
+import { fileURLToPath } from "url";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import ImageMinimizerPlugin from "image-minimizer-webpack-plugin";
+import SVGSpritemapPlugin from "svg-spritemap-webpack-plugin";
 
-const repoName = "New_v9_[company]";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const htmlFiles = fs
   .readdirSync(path.resolve(__dirname, "src"))
@@ -21,7 +23,7 @@ const htmlFiles = fs
       })
   );
 
-module.exports = {
+export default {
   mode: "production",
   devtool: false,
   entry: path.resolve(__dirname, "./src/script.js"),
@@ -42,7 +44,6 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: "./src/assets", to: "assets" },
-        { from: "./src/ext_files", to: "" },
         { from: "./src/style.css", to: "" },
         { from: "./src/script.js", to: "" },
       ],
@@ -59,9 +60,24 @@ module.exports = {
         },
       },
     }),
-    new ZipPlugin({
-      filename: `${repoName}.zip`,
-      path: path.resolve(__dirname, "public"),
+    new SVGSpritemapPlugin("./src/icons/*.svg", {
+      output: {
+        filename: "assets/img/sprite.svg",
+        svg: {
+          sizes: false,
+          xmlDeclaration: false,
+          doctypeDeclaration: false,
+          namespaceIDs: false,
+          namespaceClassnames: false,
+        },
+      },
+      sprite: {
+        prefix: "icon-",
+        generate: {
+          title: false,
+          use: true,
+        },
+      },
     }),
   ],
 };

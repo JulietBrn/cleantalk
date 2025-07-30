@@ -20,9 +20,10 @@ h1,
 .h1 {
   line-height: 120%;
   margin-bottom: 20px;
+  letter-spacing: 0.04em;
 
   font-size: 38px;
-  @media (min-width: breakpoints.$md) {
+  @media (min-width: breakpoints.$lg) {
     font-size: 64px;
   }
 }
@@ -30,22 +31,22 @@ h1,
 h2,
 .h2 {
   line-height: 110%;
-  margin-bottom: 20px;
-
-  font-size: 26px;
-  @media (min-width: breakpoints.$md) {
-    font-size: 24px;
-  }
+  margin-bottom: 32px;
+  letter-spacing: 0.03em;
+  font-size: 24px;
 }
 
 p,
 a {
+  margin-bottom: 36px;
+  line-height: 144%;
+
   font-size: 16px;
-  @media (min-width: breakpoints.$md) {
+  @media (min-width: breakpoints.$lg) {
     font-size: 18px;
   }
 }
 
-.fw-600 {
-  font-weight: 600;
+.tdu {
+  text-decoration: underline;
 }

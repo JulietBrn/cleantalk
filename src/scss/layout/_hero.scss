@@ -1,28 +1,146 @@
-// .hero {
-//   background-image: url(assets/img/hero.jpg);
-//   background-size: cover;
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   // background-attachment: fixed;
-//   position: relative;
+@use "../base/_breakpoints";
 
-//   &::before {
-//     content: "";
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     background-color: rgba(0, 0, 0, 0.5);
-//     z-index: 1;
-//   }
+.hero {
+  overflow-x: hidden;
 
-//   .container {
-//     position: relative;
-//     z-index: 2;
-//   }
-// }
+  .title-wrap {
+    position: relative;
 
-// .hero-2 {
-//   background-image: url(assets/img/hero-2.jpg);
-// }
+    &__content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .img-bg {
+      position: absolute;
+      top: 26%;
+      left: 50%;
+      width: 200%;
+      height: auto;
+      z-index: 0;
+      transform: translate(-50%, -50%);
+      @media (min-width: breakpoints.$lg) {
+        left: 22%;
+        width: 187%;
+      }
+    }
+  }
+
+  .imgs-wrap {
+    position: relative;
+    @media (min-width: breakpoints.$xxl) {
+      transform: translateX(186px);
+    }
+  }
+
+  .hero-img {
+    width: 738px;
+    max-width: 100%;
+    height: auto;
+    @media (min-width: breakpoints.$xxl) {
+      max-width: 738px;
+    }
+  }
+
+  .students-card-wrap {
+    width: max-content;
+    margin: auto;
+
+    transform: translateY(-25%);
+    @media (min-width: breakpoints.$sm) {
+      position: absolute;
+      bottom: 26%;
+      left: -2%;
+      transform: translateX(0);
+    }
+  }
+}
+
+.items {
+  margin-bottom: 56px;
+}
+
+.item {
+  font-size: 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatars-wrap {
+  display: flex;
+
+  .avatar-img {
+    --avatar-width: 35px;
+    display: inline-block;
+    width: var(--avatar-width);
+    height: var(--avatar-width);
+    border-radius: 50%;
+    background-color: var(--gray-200);
+
+    &:not(:first-child) {
+      margin-left: -6px;
+    }
+
+    &.active {
+      position: relative;
+      z-index: 1;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        right: 2px;
+        width: 8px;
+        height: 8px;
+
+        background-color: var(--primary-color);
+        border: 1px solid var(--white-color);
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .avatar-img-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:last-child {
+      margin-left: calc(-1 * var(--avatar-width) * 0.6);
+    }
+
+    font-size: 23px;
+  }
+}
+
+.students-card-wrap {
+  box-shadow: 10px 4px 34px 0 rgba(76, 99, 119, 0.2);
+  background: #fff;
+  padding: 39px 22px 39px 30px;
+  border-radius: var(--border-radius-lg);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .img-stat {
+    max-width: 70%;
+  }
+
+  hr {
+    width: 36px;
+    height: 4px;
+    background-color: var(--cyan);
+    border-radius: var(--border-radius-lg);
+    border: none;
+    margin: 6px auto 20px;
+  }
+  &__top {
+    margin-right: 16px;
+  }
+}
