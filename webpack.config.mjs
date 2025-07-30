@@ -54,7 +54,7 @@ export default {
         options: {
           plugins: [
             ["mozjpeg", { quality: 80, progressive: true }],
-            ["pngquant", { quality: [0.7, 0.9] }],
+            ["pngquant", { quality: [0.6, 0.8] }],
             ["svgo", { plugins: [{ name: "removeMetadata", active: true }] }],
           ],
         },

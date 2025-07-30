@@ -1,10 +1,5 @@
 @use "../base/_breakpoints";
 
-h1,
-h2 {
-  text-wrap: balance;
-}
-
 @font-face {
   font-family: "Inter";
   src: local("Inter");
@@ -17,9 +12,13 @@ body {
 }
 
 h1,
-.h1 {
+h2 {
+  text-wrap: balance;
+}
+
+h1 {
   line-height: 120%;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   letter-spacing: 0.04em;
 
   font-size: 38px;
@@ -28,19 +27,20 @@ h1,
   }
 }
 
-h2,
-.h2 {
+h2 {
   line-height: 110%;
   margin-bottom: 32px;
   letter-spacing: 0.03em;
   font-size: 24px;
 }
 
-p,
-a {
+p {
   margin-bottom: 36px;
   line-height: 144%;
+}
 
+p,
+a {
   font-size: 16px;
   @media (min-width: breakpoints.$lg) {
     font-size: 18px;

@@ -92,38 +92,43 @@ document.addEventListener("DOMContentLoaded", function () {
   const modals = document.querySelectorAll(".modal-wrap");
   const backdrop = document.querySelector(".backdrop");
 
-  function openModal(modalName) {
-    const targetModal = document.querySelector(
-      `.modal-wrap[data-modal="${modalName}"]`
-    );
-    if (targetModal) {
-      targetModal.classList.add("active");
-      backdrop.classList.add("active");
+  initModals();
+
+  function initModals() {
+    if (!openButtons.length || !closeButtons.length || !modals.length) return;
+    openButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const modalName = btn.dataset.modal;
+        closeAllModals();
+        openModal(modalName);
+      });
+    });
+
+    closeButtons.forEach((btn) => {
+      btn.addEventListener("click", closeAllModals);
+    });
+
+    backdrop?.addEventListener("click", closeAllModals);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeAllModals();
+    });
+
+    function openModal(modalName) {
+      const targetModal = document.querySelector(
+        `.modal-wrap[data-modal="${modalName}"]`
+      );
+      if (targetModal) {
+        targetModal.classList.add("active");
+        backdrop.classList.add("active");
+      }
+    }
+
+    function closeAllModals() {
+      modals.forEach((modal) => modal.classList.remove("active"));
+      backdrop.classList.remove("active");
     }
   }
-
-  function closeAllModals() {
-    modals.forEach((modal) => modal.classList.remove("active"));
-    backdrop.classList.remove("active");
-  }
-
-  openButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const modalName = btn.dataset.modal;
-      closeAllModals();
-      openModal(modalName);
-    });
-  });
-
-  closeButtons.forEach((btn) => {
-    btn.addEventListener("click", closeAllModals);
-  });
-
-  backdrop?.addEventListener("click", closeAllModals);
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeAllModals();
-  });
 });
 
 /******/ })()

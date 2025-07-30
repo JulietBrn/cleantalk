@@ -4,6 +4,11 @@
   padding: var(--header-padding) 0;
   background: var(--header-bg);
   box-shadow: 0 4px 20px 0 rgba(217, 217, 217, 0.25);
+
+  &__btns-wrap {
+    display: flex;
+    gap: 20px;
+  }
 }
 
 .logo {
@@ -20,7 +25,7 @@
     display: inline-block;
     width: 14px;
     height: 8px;
-    margin-left: 16px;
+    margin-left: 14px;
     vertical-align: middle;
     background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 1.25L7 6.75L12.5 1.25' stroke='%2300634B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E");
     background-repeat: no-repeat;

@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <meta name="description" content="" />
+    <title>CleanTalk - Online Learning Platform</title>
+    <meta
+      name="description"
+      content="Join CleanTalk for a transformative learning experience."
+    />
     <link rel="icon" href="assets/img/logo.png" type="image/x-icon" />
     <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
@@ -48,7 +51,7 @@
               <a class="nav-menu__link" href="#">Teachers</a>
             </li>
           </ul>
-          <div class="btns-wrap">
+          <div class="btns-wrap header__btns-wrap">
             <button class="button button-link button-sm">Log in</button>
             <button
               class="button button-primary button-sm js-open-modal"
@@ -107,11 +110,23 @@
               </div>
             </div>
             <div class="imgs-wrap">
-              <img
-                class="hero-img"
-                src="assets/img/hero-img.png"
-                alt="Hero Image 1"
-              />
+              <picture>
+                <source
+                  srcset="
+                    assets/img/hero-img.webp   1x,
+                    assets/img/hero-img-1.webp 2x,
+                    assets/img/hero-img-2.webp 3x
+                  "
+                  type="image/webp" />
+                <img
+                  class="hero-img"
+                  src="assets/img/hero-img.png"
+                  srcset="
+                    assets/img/hero-img-1.png 2x,
+                    assets/img/hero-img-2.png 3x
+                  "
+                  alt="Hero Image 1"
+              /></picture>
               <div class="students-card-wrap">
                 <div class="students-card">
                   <div class="students-card-wrap__top">
@@ -200,6 +215,7 @@
                 <input
                   class="input-wrap__input"
                   type="text"
+                  id="name"
                   name="name"
                   required
                 />
@@ -209,6 +225,7 @@
                 <input
                   class="input-wrap__input"
                   type="email"
+                  id="email"
                   name="email"
                   required
                 />
@@ -218,6 +235,7 @@
                 <input
                   class="input-wrap__input"
                   type="text"
+                  id="phone"
                   name="phone"
                   required
                 />
@@ -250,6 +268,7 @@
                 <input
                   class="input-wrap__input"
                   type="password"
+                  id="password"
                   name="password"
                   required
                 />
@@ -263,6 +282,7 @@
                 <input
                   class="input-wrap__input"
                   type="password"
+                  id="confirm-password"
                   name="confirm-password"
                   required
                 />
